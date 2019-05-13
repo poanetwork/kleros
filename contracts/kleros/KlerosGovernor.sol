@@ -7,7 +7,7 @@
  */
 
 /* solium-disable security/no-block-members */
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 import "./KlerosLiquid.sol";
 import "@kleros/kleros-interaction/contracts/libraries/CappedMath.sol";

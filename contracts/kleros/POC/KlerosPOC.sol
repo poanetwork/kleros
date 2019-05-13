@@ -5,7 +5,7 @@
  *  Bug Bounties: This code hasn't undertaken a bug bounty program yet.
  */
 
-pragma solidity ^0.4.15;
+pragma solidity ^0.5.0;
 
 import "minimetoken/contracts/TokenController.sol";
 

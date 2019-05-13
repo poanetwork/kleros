@@ -1,4 +1,4 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.5.0;
 
 // Test Imports
 import "@kleros/kleros-interaction/contracts/standard/rng/ConstantNG.sol";

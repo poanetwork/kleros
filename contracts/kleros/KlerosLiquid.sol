@@ -7,7 +7,7 @@
  */
 /* solium-disable error-reason */
 /* solium-disable security/no-block-members */
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 import { TokenController } from "minimetoken/contracts/TokenController.sol";
 import { Arbitrator, Arbitrable } from "@kleros/kleros-interaction/contracts/standard/arbitration/Arbitrator.sol";

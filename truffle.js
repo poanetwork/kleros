@@ -5,6 +5,13 @@ module.exports = {
       runs: 1
     }
   },
+
+  compilers: {
+    solc: {
+      version: '0.5.0'
+    }
+  },
+
   networks: {
     test: {
       host: 'localhost',

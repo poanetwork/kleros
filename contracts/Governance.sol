@@ -6,7 +6,7 @@
  *  @deployments: []
  */
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 import "@kleros/kleros-interaction/contracts/standard/permission/ArbitrablePermissionList.sol";
 import "@kleros/kleros-interaction/contracts/standard/arbitration/CentralizedArbitrator.sol"; // I need this contract to be deployed for tests, Truffle issue.

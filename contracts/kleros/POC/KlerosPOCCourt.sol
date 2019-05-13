@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.5.0;
 
 import "@kleros/kleros-interaction/contracts/standard/arbitration/ArbitrableTransaction.sol"; // Needed for tests
 import "@kleros/kleros-interaction/contracts/standard/rng/RNG.sol";

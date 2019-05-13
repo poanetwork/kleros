@@ -7,7 +7,7 @@
  *  Bug Bounties: This code hasn't undertaken a bug bounty program yet.
  */
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 import "@kleros/kleros-interaction/contracts/standard/rng/RNG.sol";
 import "@kleros/kleros-interaction/contracts/standard/arbitration/Arbitrator.sol";

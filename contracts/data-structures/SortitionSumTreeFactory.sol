@@ -5,7 +5,7 @@
  *  @deployments: []
  */
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 /**
  *  @title SortitionSumTreeFactory
@@ -135,7 +135,7 @@ library SortitionSumTreeFactory {
         bytes32 _key,
         uint _cursor,
         uint _count
-    ) public view returns(uint startIndex, uint[] values, bool hasMore) {
+    ) public view returns(uint startIndex, uint[] memory values, bool hasMore) {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
 
         // Find the start index.

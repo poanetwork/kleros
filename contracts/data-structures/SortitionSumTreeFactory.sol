@@ -31,14 +31,14 @@ library SortitionSumTreeFactory {
         mapping(bytes32 => SortitionSumTree) sortitionSumTrees;
     }
 
-    /* Public */
+    /* internal */
 
     /**
      *  @dev Create a sortition sum tree at the specified key.
      *  @param _key The key of the new tree.
      *  @param _K The number of children each node in the tree should have.
      */
-    function createTree(SortitionSumTrees storage self, bytes32 _key, uint _K) public {
+    function createTree(SortitionSumTrees storage self, bytes32 _key, uint _K) internal {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
         require(tree.K == 0, "Tree already exists.");
         require(_K > 1, "K must be greater than one.");
@@ -57,7 +57,7 @@ library SortitionSumTreeFactory {
      *  `k` is the maximum number of childs per node in the tree,
      *   and `n` is the maximum number of nodes ever appended.
      */
-    function set(SortitionSumTrees storage self, bytes32 _key, uint _value, bytes32 _ID) public {
+    function set(SortitionSumTrees storage self, bytes32 _key, uint _value, bytes32 _ID) internal {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
         uint treeIndex = tree.IDsToNodeIndexes[_ID];
 
@@ -119,7 +119,7 @@ library SortitionSumTreeFactory {
         }
     }
 
-    /* Public Views */
+    /* internal Views */
 
     /**
      *  @dev Query the leaves of a tree. Note that if `startIndex == 0`, the tree is empty and the root node will be returned.
@@ -135,7 +135,7 @@ library SortitionSumTreeFactory {
         bytes32 _key,
         uint _cursor,
         uint _count
-    ) public view returns(uint startIndex, uint[] memory values, bool hasMore) {
+    ) internal view returns(uint startIndex, uint[] memory values, bool hasMore) {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
 
         // Find the start index.
@@ -170,7 +170,7 @@ library SortitionSumTreeFactory {
      *  `k` is the maximum number of childs per node in the tree,
      *   and `n` is the maximum number of nodes ever appended.
      */
-    function draw(SortitionSumTrees storage self, bytes32 _key, uint _drawnNumber) public view returns(bytes32 ID) {
+    function draw(SortitionSumTrees storage self, bytes32 _key, uint _drawnNumber) internal view returns(bytes32 ID) {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
         uint treeIndex = 0;
         uint currentDrawnNumber = _drawnNumber % tree.nodes[0];
@@ -195,7 +195,7 @@ library SortitionSumTreeFactory {
      *  @param _ID The ID of the value.
      *  @return The associated value.
      */
-    function stakeOf(SortitionSumTrees storage self, bytes32 _key, bytes32 _ID) public view returns(uint value) {
+    function stakeOf(SortitionSumTrees storage self, bytes32 _key, bytes32 _ID) internal view returns(uint value) {
         SortitionSumTree storage tree = self.sortitionSumTrees[_key];
         uint treeIndex = tree.IDsToNodeIndexes[_ID];
 

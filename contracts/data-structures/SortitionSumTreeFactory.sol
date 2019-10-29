@@ -203,6 +203,15 @@ library SortitionSumTreeFactory {
         else value = tree.nodes[treeIndex];
     }
 
+   function total(SortitionSumTrees storage self, bytes32 _key) internal view returns (uint) {
+       SortitionSumTree storage tree = self.sortitionSumTrees[_key];
+       if (tree.nodes.length == 0) {
+           return 0;
+       } else {
+           return tree.nodes[0];
+       }
+   }
+
     /* Private */
 
     /**

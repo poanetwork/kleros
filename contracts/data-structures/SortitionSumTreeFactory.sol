@@ -212,6 +212,19 @@ library SortitionSumTreeFactory {
         }
     }
 
+    function numberOfNodes(SortitionSumTrees storage self, bytes32 _key) public view returns (uint256) {
+        SortitionSumTree storage tree = self.sortitionSumTrees[_key];
+        uint256 treeIndex = tree.nodes.length;
+        if (treeIndex < 2) {
+            return 0;
+        }
+        uint256 numberOfChildNodes = treeIndex - ((treeIndex - 2) / tree.K) - 1;
+        if (numberOfChildNodes < tree.stack.length) {
+            return 0;
+        }
+        return numberOfChildNodes - tree.stack.length;
+    }
+
     /* Private */
 
     /**
